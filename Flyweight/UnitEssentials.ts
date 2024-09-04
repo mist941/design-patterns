@@ -16,7 +16,7 @@ export class UnitEssentialsFactory {
   static preparedEssentials: UnitEssentials[] = [];
 
   static getUnitEssentials(texture: Essentials.TEXTURE, sound: Essentials.SOUND, unitType: UnitTypes): UnitEssentials {
-    const essentials = this.preparedEssentials.filter(e => e.unitType === unitType)[0];
+    const essentials = this.preparedEssentials.find(e => e.unitType === unitType);
 
     if (essentials) return essentials;
     else {
