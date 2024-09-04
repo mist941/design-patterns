@@ -10,7 +10,7 @@ export class FurnaceFactory implements IFurnaceFactory {
   private readonly sandwichIngredients: Ingredients[] =
     [Ingredients.BREAD, Ingredients.SAUSAGE, Ingredients.TOMATO];
 
-  prepareDish(name: string, ingredients: Ingredients[]): IDish {
+  public prepareDish(name: string, ingredients: Ingredients[]): IDish {
     if (ingredients.every(p => this.pizzaIngredients.indexOf(p) > -1)) {
       return new Pizza(name, ingredients);
     }
