@@ -5,15 +5,17 @@ interface IFurnaceFactory {
 }
 
 export class FurnaceFactory implements IFurnaceFactory {
-  prepareDish(name:string, ingredients:Ingredients[]): IDish {
-    const pizzaIngredients = [Ingredients.DOUGH, Ingredients.SAUSAGE, Ingredients.TOMATO];
-    const sandwichIngredients = [Ingredients.BREAD, Ingredients.SAUSAGE, Ingredients.TOMATO];
+  private readonly pizzaIngredients: Ingredients[] =
+    [Ingredients.DOUGH, Ingredients.SAUSAGE, Ingredients.TOMATO];
+  private readonly sandwichIngredients: Ingredients[] =
+    [Ingredients.BREAD, Ingredients.SAUSAGE, Ingredients.TOMATO];
 
-    if (ingredients.every(p => pizzaIngredients.indexOf(p) > -1)) {
+  prepareDish(name: string, ingredients: Ingredients[]): IDish {
+    if (ingredients.every(p => this.pizzaIngredients.indexOf(p) > -1)) {
       return new Pizza(name, ingredients);
     }
 
-    if (ingredients.every(p => sandwichIngredients.indexOf(p) > -1)) {
+    if (ingredients.every(p => this.sandwichIngredients.indexOf(p) > -1)) {
       return new Sandwich(name, ingredients);
     }
 
