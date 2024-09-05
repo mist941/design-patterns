@@ -1,0 +1,12 @@
+export enum Ingredients {
+  CHEESE = "CHEESE",
+  BACON = "BACON",
+  PINEAPPLES = "PINEAPPLES",
+  MUSHROOMS = "MUSHROOMS",
+  SEAFOOD = "SEAFOOD"
+}
+
+export enum Recipes {
+  ITALIAN_PIZZA = "ITALIAN_PIZZA",
+  JAPANESE_PIZZA = "JAPANESE_PIZZA",
+}
